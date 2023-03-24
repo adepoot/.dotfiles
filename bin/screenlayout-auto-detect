@@ -1,0 +1,20 @@
+#!/bin/bash
+
+mapfile -t screens < <(xrandr | grep ' connected' | awk '{print $1}')
+
+if [[ " ${screens[@]} " =~ "DP-1-1-3" ]]; then
+    echo "Three screens @home with docking station"
+    sh ~/.screenlayout/screenlayout-three-home-docking.sh
+elif [[ " ${screens[@]} " =~ "DVI-I-2-1" ]]; then
+    echo "Three screens @home without docking station"
+    sh ~/.screenlayout/screenlayout-three-home.sh
+elif [[ " ${screens[@]} " =~ "DP-1-1-1" || " $screens[@]} " =~ "DP-1-1-2" ]]; then
+    echo "Three screens @work"
+    sh ~/.screenlayout/screenlayout-three-work.sh
+elif [[ " ${screens[@]} " =~ "DP-1-3" ]]; then
+    echo "Two screens @home"
+    sh ~/.screenlayout/screenlayout-two-home.sh
+else
+    echo "Only laptop screen"
+    sh ~/.screenlayout/screenlayout-one.sh
+fi

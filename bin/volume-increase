@@ -1,0 +1,15 @@
+#!/bin/sh
+
+VOLUME=$(pacmd list-sinks | grep '\*' -A 9 | grep 'volume:' | awk 'NR==1{print $5}' | sed 's/\%//g')
+
+VOLUME=$((VOLUME+5))
+
+if [ $VOLUME -lt 151 ]
+then
+  for SINK in `pacmd list-sinks | grep 'index:' | cut -b12-`
+  do
+    echo "Changing volume of sink ${SINK} to ${VOLUME}%" 
+    pactl set-sink-volume $SINK "$VOLUME%"
+    pactl set-sink-mute $SINK 0
+  done
+fi
