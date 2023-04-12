@@ -417,17 +417,13 @@ mode "$mode_bigquery" {
     bindsym Escape mode "default"
 }
 
-
-
 # Set default workspace for classes
-assign [class="Spotify"] $ws0
-assign [class="Shutter"] $ws8
+assign [class="Spotify"] $ws10
 assign [class="jetbrains-idea"] $ws3
 assign [class="jetbrains-clion"] $ws3
 assign [class="Code"] $ws3
 assign [class="jetbrains-pycharm-ce"] $ws3
 assign [class="jetbrains-pycharm"] $ws3
-assign [class="Postman"] $ws4
 assign [class="Slack"] $ws5
 assign [class="VirtualBox Manager"] $ws6
 assign [class="VirtualBox Machine"] $ws6
