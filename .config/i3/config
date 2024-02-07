@@ -225,7 +225,7 @@ bindsym XF86AudioPrev exec playerctl previous
 #exec_always feh --bg-center $wallpaper
 #exec --no-startup-id feh --randomize --bg-fill ~/Pictures/wallpapers/*
 #exec_always feh --bg-center ~/Pictures/wallpapers/GemOne/HD_wallpaper_3840X2160px3.jpg
-exec_always feh --bg-fill ~/Pictures/wallpapers/GemOne/HD_wallpaper_3840X2160px3.jpg
+exec_always feh --bg-fill ~/Pictures/wallpapers/mountain.png
 #exec_always --no-startup-id variety
 
 # Auto screen config
@@ -370,11 +370,12 @@ mode "$mode_kubernetes" {
 }
 
 # Logging
-set $mode_logging GCP Logging (d) DEV, (q) QA, (p) PROD
+set $mode_logging GCP Logging (d) DEV, (q) QA, (p) PROD, (g) New PROD cluster
 mode "$mode_logging" {
         bindsym d exec --no-startup-id xdg-open https://console.cloud.google.com/logs/query?project=happy-fleet-service-dev&query=%0A, mode "default"
         bindsym q exec --no-startup-id xdg-open https://console.cloud.google.com/logs/query?project=happy-fleet-service-qa&query=%0A, mode "default"
         bindsym p exec --no-startup-id xdg-open https://console.cloud.google.com/logs/query?project=happy-fleet-service-prod&query=%0A, mode "default"
+        bindsym g exec --no-startup-id xdg-open https://console.cloud.google.com/logs/query?project=prj-cgke-p-gke-cluster-44e1, mode "default"
 
         # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -421,13 +422,13 @@ mode "$mode_bigquery" {
 assign [class="Spotify"] $ws10
 assign [class="jetbrains-idea"] $ws3
 assign [class="jetbrains-clion"] $ws3
-assign [class="Code"] $ws3
+#assign [class="Code"] $ws3
 assign [class="jetbrains-pycharm-ce"] $ws3
 assign [class="jetbrains-pycharm"] $ws3
 assign [class="Slack"] $ws5
 assign [class="VirtualBox Manager"] $ws6
 assign [class="VirtualBox Machine"] $ws6
-assign [class="google-chrome"] $ws9
+#assign [class="google-chrome"] $ws9
 
 # Windows that should float automatically
 for_window [window_role="pop-up"] floating enable
@@ -438,6 +439,7 @@ for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="Gnome-todo"] floating enable
 for_window [class="copyq"] floating enable
+for_window [class="pgadmin4"] floating disable
 
 # class                 border  bground text    indicator child_border
 #client.focused          #004D00 #004D00 #FFFFFF #00B500   #004D00
