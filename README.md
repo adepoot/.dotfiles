@@ -65,6 +65,10 @@ List of tools for images manipulation:
   ```
   sudo apt install pinta
   ```
+- [Kolourpaint](https://apps.kde.org/nl/kolourpaint/)
+  ```
+  sudo apt install kolourpaint
+  ```
 - [ImageMagick](https://imagemagick.org/index.php)
   ```
   sudo apt install imagemagick
