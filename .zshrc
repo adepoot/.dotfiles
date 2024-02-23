@@ -118,6 +118,7 @@ eval "$(pyenv virtualenv-init -)"
 
 # Zephyr RTOS
 export ZEPHYR_BASE="$HOME/Documents/git/rnd/obsidian/zephyr/zephyr"
+export ZEPHYR_SDK="$HOME/.local/zephyr-sdk-0.16.3"
 
 # Golang
 export PATH=$PATH:/usr/local/go/bin
