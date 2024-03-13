@@ -38,6 +38,10 @@ List of other useful packages to install:
   ```
   sudo apt install shutter
   ```
+- [Filelight](https://apps.kde.org/nl/filelight/)
+  ```
+  sudo apt install filelight
+  ```
 
 List of browsers:
 - [Google Chrome](https://www.google.com/intl/en_uk/chrome/)
