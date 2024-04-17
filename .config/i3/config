@@ -191,7 +191,7 @@ bindsym $mod+greater exec --no-startup-id i3-msg move workspace to output right
 #bindsym $mod+less move workspace to output left # Move an entire workspace to the left
 bindsym $mod+less exec --no-startup-id i3-msg move workspace to output left
 bindsym $mod+question exec --no-startup-id i3-msg move workspace to output up
-bindsym $mod+n exec --no-startup-id nautilus  # Open filesystem
+bindsym $mod+n exec --no-startup-id dolphin  # Open filesystem
 
 # Printscreen
 bindsym Print exec gnome-screenshot -i
