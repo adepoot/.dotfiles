@@ -42,6 +42,8 @@ List of other useful packages to install:
   ```
   sudo apt install filelight
   ```
+- [Dolphin](https://apps.kde.org/nl/dolphin/)
+- [Kate](https://kate-editor.org/en-gb/)
 
 List of browsers:
 - [Google Chrome](https://www.google.com/intl/en_uk/chrome/)
