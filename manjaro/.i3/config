@@ -163,9 +163,8 @@ bar {
         position bottom
         status_command i3blocks -c ~/.config/i3blocks/conf
 
-
-        ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-        #	tray_output primary
+        # Please set your primary output first. Example: 'xrandr --output eDP1 --primary'
+        tray_output primary
         #	tray_output eDP1
 
         bindsym button4 nop
@@ -242,11 +241,11 @@ exec --no-startup-id volumeicon
 #exec --no-startup-id pa-applet
 
 # Audio control
-bindsym $mod+m exec terminal -e 'alsamixer'
-#bindsym $mod+m exec pavucontrol
+#bindsym $mod+m exec terminal -e 'alsamixer'
+bindsym $mod+m exec pavucontrol
 
 # Pulseaudio
-#exec --no-startup-id pulseaudio
+exec --no-startup-id pulseaudio
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
