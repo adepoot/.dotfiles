@@ -379,21 +379,10 @@ for_window [class="Manjaro-hello"] floating enable
 ################################################################################################
 
 bindsym $mod+Ctrl+s mode "$mode_screenlayout"
-set $mode_screenlayout Choose screen layout: (l) laptop, (h) home, (w) work
+set $mode_screenlayout Choose screen layout: (l) laptop, (w) work
 mode "$mode_screenlayout" {
-    bindsym l exec --no-startup-id /home/adepoot/.screenlayout/screenlayout-one.sh, mode "default"
-    bindsym h mode "$mode_screenlayout_home"
+    bindsym l exec --no-startup-id /home/anton/.screenlayout/screenlayout-one.sh, mode "default"
     bindsym w mode "$mode_screenlayout_work"
-
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-set $mode_screenlayout_home Choose home screen layout: (u) laptop up, (d) laptop down
-mode "$mode_screenlayout_home" {
-    bindsym u exec --no-startup-id /home/adepoot/.screenlayout/screenlayout-three-home-docking.sh, mode "default"
-    bindsym d exec --no-startup-id /home/adepoot/.screenlayout/screenlayout-three-home-laptop.sh, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -402,8 +391,8 @@ mode "$mode_screenlayout_home" {
 
 set $mode_screenlayout_work Choose work screen layout: (s) laptop to the side, (d) laptop down
 mode "$mode_screenlayout_work" {
-    bindsym s exec --no-startup-id /home/adepoot/.screenlayout/screenlayout-three-work.sh, mode "default"
-    bindsym d exec --no-startup-id /home/adepoot/.screenlayout/screenlayout-three-work-laptop.sh, mode "default"
+    bindsym s exec --no-startup-id /home/anton/.screenlayout/screenlayout-three-work.sh, mode "default"
+    bindsym d exec --no-startup-id /home/anton/.screenlayout/screenlayout-three-work-laptop.sh, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"

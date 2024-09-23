@@ -29,15 +29,15 @@ separator_block_width=15
 markup=none
 
 [iface]
-instance=
+instance=enp0s13f0u3u4
 label=DOCK: 
-interval=10
+interval=5
 separator=false
 
 [iface]
 instance=enp0s31f6
 label=ETH: 
-interval=10
+interval=5
 separator=false
 
 [iface]
