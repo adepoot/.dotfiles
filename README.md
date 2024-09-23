@@ -2,16 +2,16 @@
 
 ## Setup
 
-To create the sim-links:
+To create the sim-links for manjaro:
 ```
-stow .
+stow -d manjaro -t ~ .
 ```
 
 ## Packages
 
 Install the basics:
 ```
-sudo apt install i3 i3blocks
+sudo apt install i3 i3blocks i3blocks-contrib
 sudo apt install git gitg tig
 sudo apt install stow
 sudo apt install zsh lxappearance gtk-chtheme
@@ -26,6 +26,7 @@ List of other useful packages to install:
 - [VirtualBox](https://www.virtualbox.org/)
 - [Docker](https://docs.docker.com/engine/install/ubuntu/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
+- [Poetry](https://python-poetry.org/)
 - [binwalk](https://github.com/ReFirmLabs/binwalk)
 - [k9s](https://k9scli.io/)
 - [DisplayLink](https://www.synaptics.com/products/displaylink-graphics/downloads)

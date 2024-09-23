@@ -1,0 +1,63 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+command=/usr/lib/i3blocks/$BLOCK_NAME/$BLOCK_NAME
+separator_block_width=15
+markup=none
+
+[iface]
+instance=enp0s31f6
+label=ETH: 
+interval=10
+separator=false
+
+[iface]
+instance=
+label=DOCK: 
+interval=10
+separator=false
+
+[iface]
+instance=wlp0s20f3
+label=WIFI: 
+interval=5
+separator=true
+
+#[memory]
+#label=MEM 
+#command=free -m | awk 'NR==2{printf "%.1fG", $3/1024 }'
+#separator=false
+#interval=5
+
+#[cpu_usage]
+#label=CPU 
+#interval=5
+#min_width=CPU 100.00%
+
+[time]
+command=date '+%d %b %Y  %H:%M:%S'
+interval=1
+min_width=15 Mar 2020  15:00:51_
