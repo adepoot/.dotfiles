@@ -110,3 +110,7 @@ eval "$(pyenv init -)"
 
 # pyenv virtual-env
 eval "$(pyenv virtualenv-init -)"
+
+# Zephyr RTOS
+export ZEPHYR_SDK_INSTALL_DIR="$HOME/packages/zephyr-sdk"
+export ZEPHYR_BASE="$HOME/git/obsidian/zephyrproject3.6/zephyr"
