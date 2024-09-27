@@ -103,6 +103,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias ll="ls -la"
+
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
@@ -114,3 +116,7 @@ eval "$(pyenv virtualenv-init -)"
 # Zephyr RTOS
 export ZEPHYR_SDK_INSTALL_DIR="$HOME/packages/zephyr-sdk"
 export ZEPHYR_BASE="$HOME/git/obsidian/zephyrproject3.6/zephyr"
+#export ZEPHYR_BASE="$HOME/git/obsidian/zephyrproject3.7/zephyr"
+
+# Google Cloud SDK
+source /opt/google-cloud-sdk/path.zsh.inc
