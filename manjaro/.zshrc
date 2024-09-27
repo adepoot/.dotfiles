@@ -104,6 +104,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias ll="ls -la"
+alias copy="xclip -selection clipboard"
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
