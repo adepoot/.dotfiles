@@ -235,17 +235,17 @@ client.background       #2B2C2B
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
 
+# Pulseaudio
+exec --no-startup-id start-pulseaudio-x11
+
 # Tray icons
-exec --no-startup-id volumeicon
-#exec --no-startup-id pasystray
-#exec --no-startup-id pa-applet
+#exec --no-startup-id volumeicon
+exec --no-startup-id pasystray
+# exec --no-startup-id pa-applet
 
 # Audio control
 #bindsym $mod+m exec terminal -e 'alsamixer'
 bindsym $mod+m exec pavucontrol
-
-# Pulseaudio
-exec --no-startup-id pulseaudio
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
