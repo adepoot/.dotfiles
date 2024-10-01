@@ -280,7 +280,7 @@ bindsym $mod+n exec --no-startup-id dolphin
 bindsym Print exec --no-startup-id flameshot gui
 
 # Calculator
-bindsym XF86Calculator exec --no-startup-id galculator
+bindsym XF86Calculator exec --no-startup-id gnome-calculator
 
 # Auto screen config
 bindsym $mod+Shift+s exec --no-startup-id screenlayout-auto-detect
@@ -369,6 +369,7 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="Nm-connection-editor"] floating enable
 for_window [class="galculator"] floating enable
 for_window [class="Galculator"] floating enable
+for_window [class="gnome-calculator"] floating enable
 for_window [class="copyq"] floating enable
 for_window [class="pgadmin4"] floating disable
 for_window [class="Manjaro-hello"] floating enable
