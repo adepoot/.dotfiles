@@ -116,8 +116,8 @@ eval "$(pyenv virtualenv-init -)"
 
 # Zephyr RTOS
 export ZEPHYR_SDK_INSTALL_DIR="$HOME/packages/zephyr-sdk"
-export ZEPHYR_BASE="$HOME/git/obsidian/zephyrproject3.6/zephyr"
-#export ZEPHYR_BASE="$HOME/git/obsidian/zephyrproject3.7/zephyr"
+# export ZEPHYR_BASE="$HOME/git/obsidian/zephyrproject3.6/zephyr"
+export ZEPHYR_BASE="$HOME/git/obsidian/zephyrproject3.7/zephyr"
 
 # Google Cloud SDK
 source /opt/google-cloud-sdk/path.zsh.inc
