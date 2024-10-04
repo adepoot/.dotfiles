@@ -254,6 +254,16 @@ bindsym XF86AudioStop exec playerctl stop
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# Pulse audio volume controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl -- set-sink-mute @DEFAULT_SINK@ toggle # mute sound
+
+# Amixer volume controls
+# bindsym XF86AudioMute exec --no-startup-id amixer sset 'Master' toggle
+# bindsym XF86AudioLowerVolume exec --no-startup-id amixer sset 'Master' 5%-
+# bindsym XF86AudioRaiseVolume exec --no-startup-id amixer sset 'Master' 5%+
+
 ################################################################################################
 ## Brightness
 ################################################################################################
