@@ -248,11 +248,11 @@ exec --no-startup-id pasystray
 bindsym $mod+m exec pavucontrol
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play-pause
-#bindsym XF86AudioPause exec playerctl play-pause
-bindsym XF86AudioStop exec playerctl stop
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec playerctl --player=spotify play-pause
+#bindsym XF86AudioPause exec playerctl --player=spotify play-pause
+bindsym XF86AudioStop exec playerctl --player=spotify stop
+bindsym XF86AudioNext exec playerctl --player=spotify next
+bindsym XF86AudioPrev exec playerctl --player=spotify previous
 
 # Pulse audio volume controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
