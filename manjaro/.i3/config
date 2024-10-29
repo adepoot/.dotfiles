@@ -329,6 +329,7 @@ mode "$mode_system" {
 exec --no-startup-id screenlayout-auto-detect
 exec --no-startup-id numlockx on # Enable numlock by default
 exec --no-startup-id solaar --window=hide # Solaar configures Logitech products
+exec --no-startup-id caffeine
 exec_always --no-startup-id fix_xcursor
 
 # Background
