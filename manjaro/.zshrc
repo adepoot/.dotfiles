@@ -121,3 +121,7 @@ export ZEPHYR_BASE="$HOME/git/obsidian/zephyrproject3.7/zephyr"
 
 # Google Cloud SDK
 source /opt/google-cloud-sdk/path.zsh.inc
+
+# STM32 Cube Programmer
+STM32_CUBE_PROGRAMMER_HOME="$HOME/STMicroelectronics/STM32Cube/STM32CubeProgrammer"
+export PATH="$STM32_CUBE_PROGRAMMER_HOME/bin:$PATH"
