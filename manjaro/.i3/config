@@ -326,6 +326,7 @@ mode "$mode_system" {
 ## Startup apps
 ################################################################################################
 
+exec picom -b # Compositor (to prevent screen tearing)
 exec --no-startup-id screenlayout-auto-detect
 exec --no-startup-id numlockx on # Enable numlock by default
 exec --no-startup-id solaar --window=hide # Solaar configures Logitech products
