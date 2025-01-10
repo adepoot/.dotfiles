@@ -84,19 +84,8 @@ List of tools for images manipulation:
 List of leasure tools:
 - [Spotify](https://www.spotify.com/us/download/other/)
 
-## Computer specifics
+## Other
 
-### Dell Precision 3551
+### Touchpad settings
 
-Change the touchpad settings by adding/modifying `/usr/share/X11/xorg.conf.d/40-libinput.conf`:
-```
-Section "InputClass"
-	Identifier "libinput touchpad catchall"
-	MatchIsTouchpad "on"
-	MatchDevicePath "/dev/input/event*"
-	Option "Tapping" "True"
-	Option "NaturalScrolling" "True"
-	Option "VertTwoFingerScrolling" "True"
-	Driver "libinput"
-EndSection
-```
+Change the touchpad settings by copying file [`41-libinput-extra.conf`](41-libinput-extra.conf) to `/usr/share/X11/xorg.conf.d/`.
