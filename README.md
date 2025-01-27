@@ -89,3 +89,13 @@ List of leasure tools:
 ### Touchpad settings
 
 Change the touchpad settings by copying file [`41-libinput-extra.conf`](41-libinput-extra.conf) to `/usr/share/X11/xorg.conf.d/`.
+
+### `rxvt` terminal
+
+If you are using the `rxvt-unicode` terminal, don't forget to add this line to `.Xresources`:
+
+```
+URxvt.termName: rxvt
+```
+
+See this article [why](https://wiki.archlinux.org/title/Rxvt-unicode#Remote_Hosts).
