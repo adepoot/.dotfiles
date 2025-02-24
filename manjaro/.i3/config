@@ -491,11 +491,12 @@ mode "$mode_gcp" {
 }
 
 # Pubsub
-set $mode_pubsub GCP Pubsub (d) DEV, (q) QA, (p) PROD
+set $mode_pubsub GCP Pubsub (d) DEV, (q) QA, (p) PROD, (h) HONO
 mode "$mode_pubsub" {
         bindsym d exec --no-startup-id xdg-open https://console.cloud.google.com/cloudpubsub/topic/list?project=happy-fleet-service-dev, mode "default"
         bindsym q exec --no-startup-id xdg-open https://console.cloud.google.com/cloudpubsub/topic/list?project=happy-fleet-service-qa, mode "default"
         bindsym p exec --no-startup-id xdg-open https://console.cloud.google.com/cloudpubsub/topic/list?project=happy-fleet-service-prod, mode "default"
+        bindsym h exec --no-startup-id xdg-open https://console.cloud.google.com/cloudpubsub/topic/list?project=prj-p-hono&inv=1&invt=Abp4XA, mode "default"
 
         # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -508,7 +509,7 @@ mode "$mode_storage" {
         bindsym d exec --no-startup-id xdg-open https://console.cloud.google.com/storage/browser?project=happy-fleet-service-dev, mode "default"
         bindsym q exec --no-startup-id xdg-open https://console.cloud.google.com/storage/browser?project=happy-fleet-service-qa, mode "default"
         bindsym p exec --no-startup-id xdg-open https://console.cloud.google.com/storage/browser?project=happy-fleet-service-prod, mode "default"
-    bindsym h exec --no-startup-id xdg-open https://console.cloud.google.com/storage/browser?project=happy-fleet-host, mode "default"
+        bindsym h exec --no-startup-id xdg-open https://console.cloud.google.com/storage/browser?project=happy-fleet-host, mode "default"
 
         # back to normal: Enter or Escape
     bindsym Return mode "default"
