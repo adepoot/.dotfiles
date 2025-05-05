@@ -2,7 +2,7 @@
 
 mapfile -t screens < <(xrandr | grep ' connected' | awk '{print $1}')
 
-if [[ " ${screens[@]} " =~ "DP-1-1" || " $screens[@]} " =~ "DP-1-2" ]]; then
+if [[ " ${screens[@]} " =~ "DP-1-1" || " $screens[@]} " =~ "DP-1-8" ]]; then
     echo "Three screens @work"
     sh ~/.screenlayout/screenlayout-three-work.sh
 elif [[ " ${screens[@]} " =~ "DP-1-3" ]]; then
