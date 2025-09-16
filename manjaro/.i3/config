@@ -290,6 +290,7 @@ bindsym Print exec --no-startup-id flameshot gui
 
 # Calculator
 bindsym XF86Calculator exec --no-startup-id gnome-calculator
+bindsym Scroll_Lock exec --no-startup-id gnome-calculator
 
 # Auto screen config
 bindsym $mod+Shift+s exec --no-startup-id screenlayout-auto-detect
@@ -299,7 +300,8 @@ bindsym $mod+Shift+s exec --no-startup-id screenlayout-auto-detect
 ################################################################################################
 
 # Autolock
-exec --no-startup-id xautolock -time 5 -locker blurlock
+#exec --no-startup-id xautolock -time 5 -locker blurlock
+exec --no-startup-id xidlehook --not-when-fullscreen --timer 300 'blurlock' ''
 
 # Lock screen
 bindsym $mod+Ctrl+Shift+l exec --no-startup-id i3exit lock
@@ -474,7 +476,7 @@ mode "$mode_gaps_outer" {
 bindsym $mod+g mode "$mode_gcp"
 set $mode_gcp GCP (a) Artifact Registry, (b) BigQuery, (c) Cloudbuild, (d) Cloud DNS, (e) Data Studio, (k) Kubernetes, (l) Logging, (m) Monitoring, (p) Pubsub, (s) Storage
 mode "$mode_gcp" {
-        bindsym a exec --no-startup-id xdg-open https://console.cloud.google.com/artifacts?project=happy-fleet-host, mode "default"
+        bindsym a exec --no-startup-id xdg-open https://console.cloud.google.com/artifacts?invt=AbuXjg&project=prj-c-artifacts-f43c, mode "default"
         bindsym p mode "$mode_pubsub"
         bindsym s mode "$mode_storage"
         bindsym c exec --no-startup-id xdg-open https://console.cloud.google.com/cloud-build/builds?project=happy-fleet-host, mode "default"
