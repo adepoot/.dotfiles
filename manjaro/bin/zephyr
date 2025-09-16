@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export ZEPHYR_SDK_INSTALL_DIR="$HOME/packages/zephyr-sdk"
+export ZEPHYR_BASE="$HOME/git/obsidian/zephyrproject/zephyr"
+source ~/git/obsidian/zephyrproject/.venv-zephyr/bin/activate
