@@ -99,3 +99,17 @@ URxvt.termName: rxvt
 ```
 
 See this article [why](https://wiki.archlinux.org/title/Rxvt-unicode#Remote_Hosts).
+
+## Manjaro package update issues
+
+```
+sudo pacman-key --init
+sudo pacman-key --populate archlinux manjaro
+sudo pacman-key --refresh-keys
+```
+
+one-liner:
+
+```
+sudo pacman-key --init && sudo pacman-key --populate archlinux manjaro && sudo pacman-key --refresh-keys
+```
