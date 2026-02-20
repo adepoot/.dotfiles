@@ -474,107 +474,47 @@ mode "$mode_gaps_outer" {
 ################################################################################################
 
 bindsym $mod+g mode "$mode_gcp"
-set $mode_gcp GCP (a) Artifact Registry, (b) BigQuery, (c) Cloudbuild, (d) Cloud DNS, (e) Data Studio, (k) Kubernetes, (l) Logging, (m) Monitoring, (p) Pubsub, (s) Storage
+set $mode_gcp GCP (a) Artifact Registry, (b) BigQuery, (c) Cloudbuild, (d) Cloud DNS, (e) Data Studio, (l) Logging, (p) Pubsub, (s) Storage
 mode "$mode_gcp" {
-        bindsym a exec --no-startup-id xdg-open https://console.cloud.google.com/artifacts?invt=AbuXjg&project=prj-c-artifacts-f43c, mode "default"
-        bindsym p mode "$mode_pubsub"
-        bindsym s mode "$mode_storage"
-        bindsym c exec --no-startup-id xdg-open https://console.cloud.google.com/cloud-build/builds?project=happy-fleet-host, mode "default"
-        bindsym k mode "$mode_kubernetes"
-        bindsym l mode "$mode_logging"
-        bindsym m mode "$mode_monitoring"
-        bindsym d mode "$mode_dns"
-        bindsym b mode "$mode_bigquery"
-        bindsym e exec --no-startup-id xdg-open https://datastudio.google.com/u/0/reporting/43ba8534-c336-4133-8577-f576524d548a/page/p_rc1j7i4doc, mode "default"
+    bindsym a exec --no-startup-id xdg-open https://console.cloud.google.com/artifacts?project=prj-c-artifacts-f43c, mode "default"
+    bindsym p mode "$mode_pubsub"
+    bindsym s mode "$mode_storage"
+    bindsym c exec --no-startup-id xdg-open https://console.cloud.google.com/cloud-build/builds?project=happy-fleet-host, mode "default"
+    bindsym l mode "$mode_logging"
+    bindsym e exec --no-startup-id xdg-open https://datastudio.google.com/u/0/reporting/43ba8534-c336-4133-8577-f576524d548a/page/p_rc1j7i4doc, mode "default"
 
-        # back to normal: Enter or Escape
+    # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 
 # Pubsub
-set $mode_pubsub GCP Pubsub (d) DEV, (q) QA, (p) PROD, (h) HONO
+set $mode_pubsub GCP Pubsub (p) HONO PROD (d) HONO DEV
 mode "$mode_pubsub" {
-        bindsym d exec --no-startup-id xdg-open https://console.cloud.google.com/cloudpubsub/topic/list?project=happy-fleet-service-dev, mode "default"
-        bindsym q exec --no-startup-id xdg-open https://console.cloud.google.com/cloudpubsub/topic/list?project=happy-fleet-service-qa, mode "default"
-        bindsym p exec --no-startup-id xdg-open https://console.cloud.google.com/cloudpubsub/topic/list?project=happy-fleet-service-prod, mode "default"
-        bindsym h exec --no-startup-id xdg-open https://console.cloud.google.com/cloudpubsub/topic/list?project=prj-p-hono&inv=1&invt=Abp4XA, mode "default"
+    bindsym p exec --no-startup-id xdg-open https://console.cloud.google.com/cloudpubsub/topic/list?project=prj-p-hono, mode "default"
+    bindsym d exec --no-startup-id xdg-open https://console.cloud.google.com/cloudpubsub/topic/list?project=prj-d-hono, mode "default"
 
-        # back to normal: Enter or Escape
+    # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 
 # Storage
-set $mode_storage GCP Storage (d) DEV, (q) QA, (p) PROD, (h) HOST
+set $mode_storage GCP Storage (p) R&D PROD
 mode "$mode_storage" {
-        bindsym d exec --no-startup-id xdg-open https://console.cloud.google.com/storage/browser?project=happy-fleet-service-dev, mode "default"
-        bindsym q exec --no-startup-id xdg-open https://console.cloud.google.com/storage/browser?project=happy-fleet-service-qa, mode "default"
-        bindsym p exec --no-startup-id xdg-open https://console.cloud.google.com/storage/browser?project=happy-fleet-service-prod, mode "default"
-        bindsym h exec --no-startup-id xdg-open https://console.cloud.google.com/storage/browser?project=happy-fleet-host, mode "default"
+    bindsym p exec --no-startup-id xdg-open https://console.cloud.google.com/storage/browser?project=prj-rnd-p-research-dev, mode "default"
 
-        # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-# Kubernetes
-set $mode_kubernetes GCP Kubernetes (d) DEV, (q) QA, (p) PROD
-mode "$mode_kubernetes" {
-        bindsym d exec --no-startup-id xdg-open https://console.cloud.google.com/kubernetes/workload?project=happy-fleet-service-dev, mode "default"
-        bindsym q exec --no-startup-id xdg-open https://console.cloud.google.com/kubernetes/workload?project=happy-fleet-service-qa, mode "default"
-        bindsym p exec --no-startup-id xdg-open https://console.cloud.google.com/kubernetes/workload?project=happy-fleet-service-prod, mode "default"
-
-        # back to normal: Enter or Escape
+    # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 
 # Logging
-set $mode_logging GCP Logging (d) DEV, (q) QA, (p) PROD, (g) New PROD cluster
+set $mode_logging GCP Logging (p) PROD
 mode "$mode_logging" {
-        bindsym d exec --no-startup-id xdg-open https://console.cloud.google.com/logs/query?project=happy-fleet-service-dev&query=%0A, mode "default"
-        bindsym q exec --no-startup-id xdg-open https://console.cloud.google.com/logs/query?project=happy-fleet-service-qa&query=%0A, mode "default"
-        bindsym p exec --no-startup-id xdg-open https://console.cloud.google.com/logs/query?project=happy-fleet-service-prod&query=%0A, mode "default"
-        bindsym g exec --no-startup-id xdg-open https://console.cloud.google.com/logs/query?project=prj-cgke-p-gke-cluster-44e1, mode "default"
+    bindsym p exec --no-startup-id xdg-open https://console.cloud.google.com/logs/query?project=prj-cgke-p-gke-cluster-44e1, mode "default"
 
-        # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-# Monitoring
-set $mode_monitoring GCP Monitoring (d) DEV, (q) QA, (p) PROD
-mode "$mode_monitoring" {
-        bindsym d exec --no-startup-id xdg-open https://console.cloud.google.com/monitoring/dashboards?project=happy-fleet-service-dev, mode "default"
-        bindsym q exec --no-startup-id xdg-open https://console.cloud.google.com/monitoring/dashboards?project=happy-fleet-service-qa, mode "default"
-        bindsym p exec --no-startup-id xdg-open https://console.cloud.google.com/monitoring/dashboards?project=happy-fleet-service-prod, mode "default"
-
-        # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-# Cloud DNS
-set $mode_dns GCP Cloud DNS (d) DEV, (p) PROD, (h) HOST
-mode "$mode_dns" {
-        bindsym d exec --no-startup-id xdg-open https://console.cloud.google.com/net-services/dns/zones?project=happy-fleet-service-dev, mode "default"
-        bindsym p exec --no-startup-id xdg-open https://console.cloud.google.com/net-services/dns/zones?project=happy-fleet-service-prod, mode "default"
-        bindsym h exec --no-startup-id xdg-open https://console.cloud.google.com/net-services/dns/zones?project=happy-fleet-host, mode "default"
-
-        # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-# BigQuery
-set $mode_bigquery GCP BigQuery (d) DEV, (q) QA, (p) PROD
-mode "$mode_bigquery" {
-        bindsym d exec --no-startup-id xdg-open https://console.cloud.google.com/bigquery?project=happy-fleet-service-dev, mode "default"
-        bindsym q exec --no-startup-id xdg-open https://console.cloud.google.com/bigquery?project=happy-fleet-service-qa, mode "default"
-        bindsym p exec --no-startup-id xdg-open https://console.cloud.google.com/bigquery?project=happy-fleet-service-prod, mode "default"
-
-        # back to normal: Enter or Escape
+    # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
