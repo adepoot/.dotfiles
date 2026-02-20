@@ -474,9 +474,9 @@ mode "$mode_gaps_outer" {
 ################################################################################################
 
 bindsym $mod+g mode "$mode_gcp"
-set $mode_gcp GCP (a) Artifact Registry, (b) BigQuery, (c) Cloudbuild, (d) Cloud DNS, (e) Data Studio, (l) Logging, (p) Pubsub, (s) Storage
+set $mode_gcp GCP (a) Artifact Registry, (e) Data Studio, (l) Logging, (p) Pubsub, (s) Storage
 mode "$mode_gcp" {
-    bindsym a exec --no-startup-id xdg-open https://console.cloud.google.com/artifacts?project=prj-c-artifacts-f43c, mode "default"
+    bindsym a mode "$mode_artifact"
     bindsym p mode "$mode_pubsub"
     bindsym s mode "$mode_storage"
     bindsym c exec --no-startup-id xdg-open https://console.cloud.google.com/cloud-build/builds?project=happy-fleet-host, mode "default"
@@ -488,8 +488,20 @@ mode "$mode_gcp" {
     bindsym Escape mode "default"
 }
 
+# Artifact Registry
+set $mode_artifact GCP Artifact Registry (g) general, (p) Python, (r) R&D
+mode "$mode_artifact" {
+    bindsym g exec --no-startup-id xdg-open https://console.cloud.google.com/artifacts?project=prj-c-artifacts-f43c, mode "default"
+    bindsym p exec --no-startup-id xdg-open https://console.cloud.google.com/artifacts/python/prj-c-artifacts-f43c/europe-west1/gar-py-common?project=prj-c-artifacts-f43c, mode "default"
+    bindsym r exec --no-startup-id xdg-open https://console.cloud.google.com/artifacts/docker/prj-c-artifacts-f43c/europe-west1/gar-research-dev?project=prj-c-artifacts-f43c, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
 # Pubsub
-set $mode_pubsub GCP Pubsub (p) HONO PROD (d) HONO DEV
+set $mode_pubsub GCP Pubsub (p) Hono PROD (d) Hono DEV
 mode "$mode_pubsub" {
     bindsym p exec --no-startup-id xdg-open https://console.cloud.google.com/cloudpubsub/topic/list?project=prj-p-hono, mode "default"
     bindsym d exec --no-startup-id xdg-open https://console.cloud.google.com/cloudpubsub/topic/list?project=prj-d-hono, mode "default"
@@ -502,7 +514,7 @@ mode "$mode_pubsub" {
 # Storage
 set $mode_storage GCP Storage (p) R&D PROD
 mode "$mode_storage" {
-    bindsym p exec --no-startup-id xdg-open https://console.cloud.google.com/storage/browser?project=prj-rnd-p-research-dev, mode "default"
+    bindsym p exec --no-startup-id xdg-open https://console.cloud.google.com/storage/browser?project=prj-rnd-p-research-dev-9ad6, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
