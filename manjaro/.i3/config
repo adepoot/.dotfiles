@@ -474,12 +474,12 @@ mode "$mode_gaps_outer" {
 ################################################################################################
 
 bindsym $mod+g mode "$mode_gcp"
-set $mode_gcp GCP (a) Artifact Registry, (e) Data Studio, (l) Logging, (p) Pubsub, (s) Storage
+set $mode_gcp GCP (a) Artifact Registry, (e) Data Studio, (l) Logging, (p) Pubsub, (s) Storage, (c) Secret Manager
 mode "$mode_gcp" {
     bindsym a mode "$mode_artifact"
     bindsym p mode "$mode_pubsub"
     bindsym s mode "$mode_storage"
-    bindsym c exec --no-startup-id xdg-open https://console.cloud.google.com/cloud-build/builds?project=happy-fleet-host, mode "default"
+    bindsym c exec --no-startup-id xdg-open https://console.cloud.google.com/security/secret-manager?project=prj-rnd-p-research-dev-9ad6, mode "default"
     bindsym l mode "$mode_logging"
     bindsym e exec --no-startup-id xdg-open https://datastudio.google.com/u/0/reporting/43ba8534-c336-4133-8577-f576524d548a/page/p_rc1j7i4doc, mode "default"
 
@@ -489,10 +489,11 @@ mode "$mode_gcp" {
 }
 
 # Artifact Registry
-set $mode_artifact GCP Artifact Registry (g) general, (p) Python, (r) R&D
+set $mode_artifact GCP Artifact Registry (g) general, (c) Python common (p) Python R&D, (r) R&D
 mode "$mode_artifact" {
     bindsym g exec --no-startup-id xdg-open https://console.cloud.google.com/artifacts?project=prj-c-artifacts-f43c, mode "default"
-    bindsym p exec --no-startup-id xdg-open https://console.cloud.google.com/artifacts/python/prj-c-artifacts-f43c/europe-west1/gar-py-common?project=prj-c-artifacts-f43c, mode "default"
+    bindsym c exec --no-startup-id xdg-open https://console.cloud.google.com/artifacts/python/prj-c-artifacts-f43c/europe-west1/gar-py-common?project=prj-c-artifacts-f43c, mode "default"
+    bindsym p exec --no-startup-id xdg-open https://console.cloud.google.com/artifacts/python/prj-c-artifacts-f43c/europe-west1/gar-py-research-dev?project=prj-c-artifacts-f43c, mode "default"
     bindsym r exec --no-startup-id xdg-open https://console.cloud.google.com/artifacts/docker/prj-c-artifacts-f43c/europe-west1/gar-research-dev?project=prj-c-artifacts-f43c, mode "default"
 
     # back to normal: Enter or Escape
